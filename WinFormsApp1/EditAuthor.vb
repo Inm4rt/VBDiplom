@@ -12,7 +12,7 @@ Public Class EditAuthor
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         conn.Open()
         Dim cmdBook As New MySqlCommand("update author set fio = @fio where id = @id", conn)
-        cmdBook.Parameters.AddWithValue("@fio", SqlDbType.VarChar).Value = TextBox1.Text
+        cmdBook.Parameters.AddWithValue("@fio", TextBox1.Text)
         cmdBook.Parameters.AddWithValue("@id", SqlDbType.Int).Value = data
         cmdBook.ExecuteReader()
         conn.Close()

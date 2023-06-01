@@ -35,7 +35,7 @@ Public Class EditBook
         Dim reader As MySqlDataReader
         conn.Open()
         Dim cmd As New MySqlCommand("update bookentity set name = @name, author_id = @auth_id where id = @id", conn)
-        cmd.Parameters.AddWithValue("@name", SqlDbType.VarChar).Value = TextBox1.Text
+        cmd.Parameters.AddWithValue("@name", TextBox1.Text)
         cmd.Parameters.AddWithValue("@auth_id", SqlDbType.Int).Value = ComboBox1.Text.Split(" ")(0)
         cmd.Parameters.AddWithValue("@id", SqlDbType.Int).Value = entId
         reader = cmd.ExecuteReader()
@@ -43,9 +43,9 @@ Public Class EditBook
 
         cmd = New MySqlCommand("update book set year = @year, amount_pages = @pages, isbn = @isbn where id = @id", conn)
         cmd.Parameters.AddWithValue("@id", SqlDbType.Int).Value = bookId
-        cmd.Parameters.AddWithValue("@year", SqlDbType.VarChar).Value = TextBox2.Text
+        cmd.Parameters.AddWithValue("@year", TextBox2.Text)
         cmd.Parameters.AddWithValue("@pages", SqlDbType.Int).Value = TextBox3.Text
-        cmd.Parameters.AddWithValue("@isbn", SqlDbType.VarChar).Value = TextBox4.Text
+        cmd.Parameters.AddWithValue("@isbn", TextBox4.Text)
         reader = cmd.ExecuteReader()
         reader.Close()
         conn.Close()

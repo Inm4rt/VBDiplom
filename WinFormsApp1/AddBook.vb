@@ -19,11 +19,11 @@ Public Class AddBook
         reader.Close()
 
 
-        Dim cmdBook As New MySqlCommand("insert into book values (null, @entity_id, @age, @count_pages, @isbn)", conn)
+        Dim cmdBook As New MySqlCommand("insert into book values (null, @entity_id, @age, @count_pages, '" & TextBox4.Text & "')", conn)
         cmdBook.Parameters.AddWithValue("@entity_id", SqlDbType.Int).Value = cmd_result
         cmdBook.Parameters.AddWithValue("@age", SqlDbType.VarChar).Value = TextBox2.Text
         cmdBook.Parameters.AddWithValue("@count_pages", SqlDbType.Int).Value = TextBox3.Text
-        cmdBook.Parameters.AddWithValue("@isbn", SqlDbType.VarChar).Value = TextBox4.Text
+        'cmdBook.Parameters.AddWithValue("@isbn", SqlDbType.VarChar).Value = TextBox4.Text
         cmdBook.ExecuteReader()
         conn.Close()
     End Sub

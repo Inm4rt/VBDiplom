@@ -23,6 +23,9 @@ Partial Class Form4
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.Book = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Library = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Visitor = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -31,9 +34,7 @@ Partial Class Form4
         Me.idLib = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.idBook = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.idVis = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.idTaken = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -42,7 +43,7 @@ Partial Class Form4
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Book, Me.Library, Me.Visitor, Me.Lending, Me.Surraund, Me.idLib, Me.idBook, Me.idVis})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Book, Me.Library, Me.Visitor, Me.Lending, Me.Surraund, Me.idLib, Me.idBook, Me.idVis, Me.idTaken})
         Me.DataGridView1.Location = New System.Drawing.Point(8, 7)
         Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2)
         Me.DataGridView1.MultiSelect = False
@@ -53,6 +54,36 @@ Partial Class Form4
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(814, 487)
         Me.DataGridView1.TabIndex = 0
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(12, 520)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(144, 27)
+        Me.Button1.TabIndex = 1
+        Me.Button1.Text = "Выдать книгу"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(160, 520)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(78, 27)
+        Me.Button2.TabIndex = 2
+        Me.Button2.Text = "Принять книгу"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(242, 520)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(78, 27)
+        Me.Button3.TabIndex = 3
+        Me.Button3.Text = "Изменить данные о выдаче книги"
+        Me.Button3.UseVisualStyleBackColor = True
         '
         'Book
         '
@@ -115,35 +146,12 @@ Partial Class Form4
         Me.idVis.ReadOnly = True
         Me.idVis.Visible = False
         '
-        'Button1
+        'idTaken
         '
-        Me.Button1.Location = New System.Drawing.Point(12, 520)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(144, 27)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Выдать книгу"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(160, 520)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(78, 27)
-        Me.Button2.TabIndex = 2
-        Me.Button2.Text = "Принять книгу"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(242, 520)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(78, 27)
-        Me.Button3.TabIndex = 3
-        Me.Button3.Text = "Изменить данные о выдаче книги"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.idTaken.HeaderText = "idTaken"
+        Me.idTaken.Name = "idTaken"
+        Me.idTaken.ReadOnly = True
+        Me.idTaken.Visible = False
         '
         'Form4
         '
@@ -175,4 +183,5 @@ Partial Class Form4
     Friend WithEvents idLib As DataGridViewTextBoxColumn
     Friend WithEvents idBook As DataGridViewTextBoxColumn
     Friend WithEvents idVis As DataGridViewTextBoxColumn
+    Friend WithEvents idTaken As DataGridViewTextBoxColumn
 End Class

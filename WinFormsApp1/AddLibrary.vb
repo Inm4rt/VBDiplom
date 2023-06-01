@@ -7,10 +7,15 @@ Public Class AddLibrary
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         conn.Open()
         Dim cmd As New MySqlCommand("insert into library values (null, @name, @address, @phone, @time)", conn)
-        cmd.Parameters.AddWithValue("@name", SqlDbType.VarChar).Value = TextBox1.Text
-        cmd.Parameters.AddWithValue("@address", SqlDbType.VarChar).Value = TextBox2.Text
-        cmd.Parameters.AddWithValue("@phone", SqlDbType.VarChar).Value = TextBox3.Text
-        cmd.Parameters.AddWithValue("@time", SqlDbType.VarChar).Value = TextBox4.Text
+        'cmd.Parameters.AddWithValue("@name", SqlDbType.VarChar).Value = TextBox1.Text
+        'cmd.Parameters.AddWithValue("@address", SqlDbType.VarChar).Value = TextBox2.Text
+        'cmd.Parameters.AddWithValue("@phone", SqlDbType.VarChar).Value = TextBox3.Text
+        'cmd.Parameters.AddWithValue("@time", SqlDbType.VarChar).Value = TextBox4.Text
+        cmd.Parameters.AddWithValue("@name", TextBox1.Text)
+        cmd.Parameters.AddWithValue("@address", TextBox2.Text)
+        cmd.Parameters.AddWithValue("@phone", TextBox3.Text)
+        cmd.Parameters.AddWithValue("@time", TextBox4.Text)
+
 
         cmd.ExecuteReader()
         conn.Close()

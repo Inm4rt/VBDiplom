@@ -2,7 +2,7 @@
 Imports MySql.Data.MySqlClient
 
 Public Class Form9
-    Dim data As Integer
+    Dim takenId As Integer
     Dim connStr As String = "server=localhost;user=root;database=LIB;port=3306;password=1234;"
     Dim conn As New MySqlConnection(connStr)
     Dim bookId As Integer
@@ -11,12 +11,13 @@ Public Class Form9
     Dim start As Date
     Dim End_ As Date
 
-    Friend Sub SendData(ByVal idBook As Integer, ByVal idlLib As Integer, ByVal idVis As Integer, ByVal startD As Date, ByVal endD As Date)
+    Friend Sub SendData(ByVal idBook As Integer, ByVal idlLib As Integer, ByVal idVis As Integer, ByVal startD As Date, ByVal endD As Date, ByVal idTaken As Integer)
         bookId = idBook
         libId = idlLib
         visId = idVis
         start = startD
         End_ = endD
+        takenId = idTaken
     End Sub
     Private Sub Form9_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim cmd As New MySqlCommand("select book.id, name, year from book join bookentity on book.id_entity = bookentity.id", conn)
@@ -75,7 +76,7 @@ Public Class Form9
                                         ", id_book = " & ComboBox3.Text.Split(" ")(0) &
                                         ", taking_date = '" & DateTimePicker1.Value.Date.ToString("yyyy-MM-dd") &
                                         "', return_date = '" & DateTimePicker2.Value.Date.ToString("yyyy-MM-dd") &
-                                        "' where id = 1", conn)
+                                        "' where id = " & takenId, conn)
         cmdBook.ExecuteReader()
         conn.Close()
     End Sub

@@ -33,6 +33,7 @@ Partial Class EditRestable
         '
         'ComboBox3
         '
+        Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox3.FormattingEnabled = True
         Me.ComboBox3.Location = New System.Drawing.Point(102, 14)
         Me.ComboBox3.Margin = New System.Windows.Forms.Padding(2)
@@ -42,6 +43,7 @@ Partial Class EditRestable
         '
         'ComboBox1
         '
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Location = New System.Drawing.Point(102, 43)
         Me.ComboBox1.Margin = New System.Windows.Forms.Padding(2)

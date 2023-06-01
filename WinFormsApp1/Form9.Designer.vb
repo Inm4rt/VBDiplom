@@ -58,7 +58,7 @@ Partial Class Form9
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(52, 167)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(251, 23)
         Me.Button1.TabIndex = 37
@@ -67,18 +67,20 @@ Partial Class Form9
         '
         'ComboBox3
         '
+        Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox3.FormattingEnabled = True
         Me.ComboBox3.Location = New System.Drawing.Point(100, 17)
-        Me.ComboBox3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ComboBox3.Margin = New System.Windows.Forms.Padding(2)
         Me.ComboBox3.Name = "ComboBox3"
         Me.ComboBox3.Size = New System.Drawing.Size(205, 23)
         Me.ComboBox3.TabIndex = 56
         '
         'ComboBox1
         '
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Location = New System.Drawing.Point(100, 46)
-        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(205, 23)
         Me.ComboBox1.TabIndex = 54
@@ -115,9 +117,10 @@ Partial Class Form9
         '
         'ComboBox2
         '
+        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Location = New System.Drawing.Point(100, 74)
-        Me.ComboBox2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ComboBox2.Margin = New System.Windows.Forms.Padding(2)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(205, 23)
         Me.ComboBox2.TabIndex = 55
@@ -125,7 +128,7 @@ Partial Class Form9
         'DateTimePicker1
         '
         Me.DateTimePicker1.Location = New System.Drawing.Point(100, 103)
-        Me.DateTimePicker1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DateTimePicker1.Margin = New System.Windows.Forms.Padding(2)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(205, 23)
         Me.DateTimePicker1.TabIndex = 57
@@ -133,7 +136,7 @@ Partial Class Form9
         'DateTimePicker2
         '
         Me.DateTimePicker2.Location = New System.Drawing.Point(100, 132)
-        Me.DateTimePicker2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DateTimePicker2.Margin = New System.Windows.Forms.Padding(2)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(205, 23)
         Me.DateTimePicker2.TabIndex = 58
@@ -155,7 +158,7 @@ Partial Class Form9
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Button1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Form9"
         Me.Text = "Изменение данных о выдаче книги"
         Me.ResumeLayout(False)

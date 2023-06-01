@@ -15,8 +15,8 @@ Public Class EditVisitor
         conn.Open()
         Dim cmd As New MySqlCommand("update visitor set fio=@fio, phone=@phone where lib_card = @id", conn)
         cmd.Parameters.AddWithValue("@id", SqlDbType.Int).Value = idVis
-        cmd.Parameters.AddWithValue("@fio", SqlDbType.VarChar).Value = TextBox1.Text
-        cmd.Parameters.AddWithValue("@phone", SqlDbType.VarChar).Value = TextBox2.Text
+        cmd.Parameters.AddWithValue("@fio", TextBox1.Text)
+        cmd.Parameters.AddWithValue("@phone", TextBox2.Text)
         cmd.ExecuteReader()
         conn.Close()
     End Sub

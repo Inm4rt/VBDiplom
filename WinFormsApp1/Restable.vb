@@ -9,7 +9,7 @@ Public Class Restable
     End Sub
 
     Private Sub DataFill()
-        Dim cmd As New MySqlCommand("select book.id, library.name, BookEntity.name, amount_books, year, id_library from restable join library on library.id = id_library join book on book.id = id_book join BookEntity on BookEntity.id = id_entity", conn)
+        Dim cmd As New MySqlCommand("select book.id, library.name, BookEntity.name, amount_books, year, id_library, restable.id from restable join library on library.id = id_library join book on book.id = id_book join BookEntity on BookEntity.id = id_entity", conn)
         Dim daRestable As New MySqlDataAdapter(cmd)
         Dim dt As New DataTable
         Dim row As ArrayList
@@ -23,6 +23,7 @@ Public Class Restable
                 row.Add(dt.Rows(i)(3))
                 row.Add(dt.Rows(i)(0))
                 row.Add(dt.Rows(i)(5))
+                row.Add(dt.Rows(i)(6))
                 DataGridView1.Rows.Add(row.ToArray())
             Next
         Else
@@ -30,8 +31,14 @@ Public Class Restable
         End If
     End Sub
 
+    Private Sub ClearData()
+        DataGridView1.Rows.Clear()
+        DataGridView1.Refresh()
+    End Sub
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         AddRestable.ShowDialog()
+        ClearData()
         DataFill()
     End Sub
 
@@ -39,9 +46,10 @@ Public Class Restable
         conn.Open()
         Dim cmdRestable As New MySqlCommand("delete from Restable where id = @id;", conn)
         Dim ind = DataGridView1.SelectedRows(0).Index.ToString()
-        cmdRestable.Parameters.AddWithValue("@id", SqlDbType.Int).Value = DataGridView1.Rows(ind).Cells(0).Value
+        cmdRestable.Parameters.AddWithValue("@id", DataGridView1.Rows(ind).Cells(5).Value)
         cmdRestable.ExecuteReader()
         conn.Close()
+        ClearData()
         DataFill()
     End Sub
 
@@ -53,6 +61,7 @@ Public Class Restable
                           DataGridView1.Rows(ind).Cells(4).Value,
                           DataGridView1.Rows(ind).Cells(2).Value)
         editForm.ShowDialog()
+        ClearData()
         DataFill()
     End Sub
 End Class

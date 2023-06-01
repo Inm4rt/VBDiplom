@@ -50,4 +50,8 @@ Public Class EditRestable
         cmd.ExecuteReader()
         conn.Close()
     End Sub
+
+    Private Sub EditRestable_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

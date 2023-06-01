@@ -19,6 +19,7 @@ Public Class Form4
         reader = cmd.ExecuteReader()
         reader.Close()
         conn.Close()
+        DataClear()
         DataFill()
     End Sub
     Private Sub DataFill()
@@ -33,6 +34,7 @@ Public Class Form4
                 Dim idLib = dt.Rows(i)(2)
                 Dim idBook = dt.Rows(i)(3)
                 Dim libcard = dt.Rows(i)(1)
+                Dim idTaken = dt.Rows(i)(0)
 
                 row = New ArrayList
                 conn.Open()
@@ -71,6 +73,7 @@ Public Class Form4
                 row.Add(dt.Rows(i)(2))
                 row.Add(dt.Rows(i)(3))
                 row.Add(dt.Rows(i)(1))
+                row.Add(idTaken)
                 DataGridView1.Rows.Add(row.ToArray())
             Next
 
@@ -78,12 +81,18 @@ Public Class Form4
             MessageBox.Show("No", "noo", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End If
     End Sub
+
+    Private Sub DataClear()
+        DataGridView1.Rows.Clear()
+        DataGridView1.Refresh()
+    End Sub
     Private Sub Form4_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         DataFill()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Form7.ShowDialog()
+        DataClear()
         DataFill()
     End Sub
 
@@ -95,8 +104,10 @@ Public Class Form4
                           DataGridView1.Rows(ind).Cells(5).Value,
                           DataGridView1.Rows(ind).Cells(7).Value,
                           DataGridView1.Rows(ind).Cells(3).Value,
-                          DataGridView1.Rows(ind).Cells(4).Value)
+                          DataGridView1.Rows(ind).Cells(4).Value,
+                          DataGridView1.Rows(ind).Cells(8).Value)
         editForm.ShowDialog()
+        DataClear()
         DataFill()
     End Sub
 End Class

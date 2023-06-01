@@ -31,13 +31,14 @@ Partial Class Restable
         Me.Amount = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.bookId = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.libId = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idRes = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Book, Me.Library, Me.Amount, Me.bookId, Me.libId})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Book, Me.Library, Me.Amount, Me.bookId, Me.libId, Me.idRes})
         Me.DataGridView1.Location = New System.Drawing.Point(8, 14)
         Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2)
         Me.DataGridView1.Name = "DataGridView1"
@@ -112,6 +113,13 @@ Partial Class Restable
         Me.libId.ReadOnly = True
         Me.libId.Visible = False
         '
+        'idRes
+        '
+        Me.idRes.HeaderText = "idRes"
+        Me.idRes.Name = "idRes"
+        Me.idRes.ReadOnly = True
+        Me.idRes.Visible = False
+        '
         'Restable
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -139,4 +147,5 @@ Partial Class Restable
     Friend WithEvents Amount As DataGridViewTextBoxColumn
     Friend WithEvents bookId As DataGridViewTextBoxColumn
     Friend WithEvents libId As DataGridViewTextBoxColumn
+    Friend WithEvents idRes As DataGridViewTextBoxColumn
 End Class
