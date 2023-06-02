@@ -26,9 +26,6 @@ Public Class Authors
                 row.Add(dt.Rows(i)(1))
                 DataGridView1.Rows.Add(row.ToArray())
             Next
-
-        Else
-            MessageBox.Show("No", "noo", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End If
     End Sub
 

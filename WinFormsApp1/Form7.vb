@@ -69,7 +69,7 @@ Public Class Form7
             reader.Close()
 
         Else
-            MessageBox.Show("В данной библиотеке нет такой книги", "УВЫ JOKERGE", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show("В данной библиотеке нет такой книги", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End If
         conn.Close()
     End Sub

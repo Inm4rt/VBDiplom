@@ -42,9 +42,6 @@ Public Class Form1
                 conn.Close()
                 DataGridView1.Rows.Add(row.ToArray())
             Next
-
-        Else
-            MessageBox.Show("No", "noo", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End If
     End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load

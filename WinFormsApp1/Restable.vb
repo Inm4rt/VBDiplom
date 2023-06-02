@@ -26,8 +26,6 @@ Public Class Restable
                 row.Add(dt.Rows(i)(6))
                 DataGridView1.Rows.Add(row.ToArray())
             Next
-        Else
-            MessageBox.Show("No", "noo", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End If
     End Sub
 

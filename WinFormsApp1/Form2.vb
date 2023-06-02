@@ -26,9 +26,6 @@ Public Class Form2
                 conn.Close()
                 DataGridView1.Rows.Add(row.ToArray())
             Next
-
-        Else
-            MessageBox.Show("No", "noo", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End If
     End Sub
 
